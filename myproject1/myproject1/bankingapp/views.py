@@ -85,7 +85,7 @@ def newUser(request):
         cpassword = request.POST['cpassword']
         emptyvalues=True
 
-        if username==None or password==None or cpassword==None:
+        if username=='' or password=='' or cpassword=='':
             emptyvalues=False
 
 
