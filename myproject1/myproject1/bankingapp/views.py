@@ -85,14 +85,14 @@ def newUser(request):
         cpassword = request.POST['cpassword']
         emptyvalues=True
 
-        if username==None || password==None || cpassword==None:
+        if username==None or password==None or cpassword==None:
             emptyvalues=False
 
 
         if password==cpassword:
             continuev=True
         
-        if continuev && emptyvalues:
+        if continuev and emptyvalues:
             usr = models.Registration(username=username, password=password)
             usr.save()
 
