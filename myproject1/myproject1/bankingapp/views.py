@@ -83,13 +83,19 @@ def newUser(request):
         username = request.POST['username']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
+        emptyvalues=True
+
+        if username==None || password==None || cpassword==None:
+            emptyvalues=False
+
 
         if password==cpassword:
             continuev=True
         
-        if continuev:
+        if continuev && emptyvalues:
             usr = models.Registration(username=username, password=password)
             usr.save()
+
 
     return render(request, 'register.html',{'user': user})
 
