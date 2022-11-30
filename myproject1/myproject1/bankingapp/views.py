@@ -104,7 +104,7 @@ def login1(request):
             request.session['username']=username
             return render(request,'button.html')
         except models.Registration.DoesNotExist:
-            return render(request,'/',{'user':'please login'})
+            return render(request,'login.html',{'user':'please login'})
     else:
         return render(request,'login.html',{'user':'please login'})
 
