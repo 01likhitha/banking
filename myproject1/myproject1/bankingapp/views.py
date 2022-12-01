@@ -93,7 +93,7 @@ def newUser(request):
             continuev=True
         
         if continuev and emptyvalues:
-            usr = models.Registration(username=username, password=password)
+            usr = models.Registration(username=username,password=password)
             usr.save()
             return redirect('login1')
     return render(request, 'register.html',{'user': user})
@@ -105,7 +105,7 @@ def login1(request):
         password = request.POST['password']
 
         try:
-            entry=models.Registration.objects.get(username=username,paasword=password)
+            entry=models.Registration.objects.get(username=username,password=password)
             request.session['username']=username
             return render(request,'button.html')
         except models.Registration.DoesNotExist:
