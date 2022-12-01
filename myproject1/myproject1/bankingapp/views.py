@@ -84,6 +84,7 @@ def newUser(request):
         password = request.POST['password']
         cpassword = request.POST['cpassword']
         emptyvalues=True
+        return redirect('login.html')
 
         if username=='' or password=='' or cpassword=='':
             emptyvalues=False
