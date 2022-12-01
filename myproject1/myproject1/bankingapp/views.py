@@ -95,7 +95,7 @@ def newUser(request):
         if continuev and emptyvalues:
             usr = models.Registration(username=username, password=password)
             usr.save()
-            return redirect('/')
+            return redirect('login.html')
     return render(request, 'register.html',{'user': user})
 
 def login1(request):
