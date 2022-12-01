@@ -95,6 +95,7 @@ def newUser(request):
         if continuev and emptyvalues:
             usr = models.Registration(username=username, password=password)
             usr.save()
+        if username!='' or password!='' or cpassword!='':
             return render(request,'login.html')
             
      
