@@ -99,13 +99,13 @@ def newUser(request):
     return render(request, 'register.html',{'user': user})
 
 def login1(request):
-    if 'username','password' in request.POST:
+    if 'username'  in request.POST:
 
         username = request.POST['username']
         password = request.POST['password']
 
         try:
-            entry=models.Registration.objects.get(username=username)
+            entry=models.Registration.objects.get(username=username,paasword=password)
             request.session['username']=username
             return render(request,'button.html')
         except models.Registration.DoesNotExist:
