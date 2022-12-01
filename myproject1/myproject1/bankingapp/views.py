@@ -99,7 +99,7 @@ def newUser(request):
     return render(request, 'register.html',{'user': user})
 
 def login1(request):
-    if 'username' in request.POST:
+    if 'username' and 'password' in request.POST:
 
         username = request.POST['username']
         password = request.POST['password']
