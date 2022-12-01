@@ -85,9 +85,6 @@ def newUser(request):
         cpassword = request.POST['cpassword']
         emptyvalues=True
        
-        if username != '' && password !='' && cpassword !='':
-            return redirect('login1')
-
         if username=='' or password=='' or cpassword=='':
             emptyvalues=False
 
@@ -98,7 +95,7 @@ def newUser(request):
         if continuev and emptyvalues:
             usr = models.Registration(username=username, password=password)
             usr.save()
-            
+            return render(request,'login.html')
             
      
            
