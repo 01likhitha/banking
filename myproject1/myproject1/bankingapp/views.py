@@ -84,7 +84,7 @@ def newUser(request):
         password = request.POST['password']
         cpassword = request.POST['cpassword']
         emptyvalues=True
-        return redirect('login')
+        
 
         if username=='' or password=='' or cpassword=='':
             emptyvalues=False
@@ -97,7 +97,8 @@ def newUser(request):
             usr = models.Registration(username=username, password=password)
             usr.save()
             
-          
+        if emptyvalues=True:
+            return redirect("login") 
            
     return render(request, 'register.html',{'user': user})
 
